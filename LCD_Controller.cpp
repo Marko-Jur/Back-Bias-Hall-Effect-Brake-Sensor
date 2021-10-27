@@ -50,7 +50,7 @@ void LCDSetup(){
 
 
 
-void LCDDisplay(int toggle_switch,int pot_status, int engage_counter, float brake1, int disengage_counter, float brake2, int cycles, float engage_accuracy, float disengage_accuracy){
+void LCDDisplay(int toggle_switch,int pot_status, int engage_counter, float brake1, int disengage_counter, float brake2, int cycles, float engage_accuracy, float disengage_accuracy, int e_step, int d_step){
 
   lcd.setCursor(0,0);
   lcd.print("Cyc");
@@ -85,12 +85,12 @@ void LCDDisplay(int toggle_switch,int pot_status, int engage_counter, float brak
   lcd.setCursor(9,2);
   lcd.print("ES:");
   lcd.setCursor(12,2);
-  lcd.print("123");
+  lcd.print(e_step);
 
   lcd.setCursor(15,2);
   lcd.print("DS:");
   lcd.setCursor(18,2);
-  lcd.print("10");
+  lcd.print(d_step);
 
 
   lcd.setCursor(0,3);

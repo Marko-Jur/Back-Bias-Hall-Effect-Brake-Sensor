@@ -15,6 +15,8 @@ int disengage_counter = 0;
 int cycles = 0;
 int engage_accuracy = 0;
 int disengage_accuracy = 0;
+int e_step = 0;
+int d_step = 0;
 
 void setup() {
   
@@ -32,7 +34,7 @@ void loop() {
 
   analogReader(control_array);
 
-  servoEngage(control_array);
+  e_step = servoEngage(control_array);
 
   brake1 = brakeSensor();
 
@@ -43,7 +45,7 @@ void loop() {
     engage_counter = engage_counter;
   }
 
-  servoDisengage(control_array);
+  d_step = servoDisengage(control_array);
 
   brake2 = brakeSensor();
   
@@ -59,7 +61,7 @@ void loop() {
   engage_accuracy = float(float(engage_counter)/float(cycles))*100.00;
   disengage_accuracy = float(float(disengage_counter)/float(cycles))*100.00;
 
-  LCDDisplay(control_array[1],control_array[2], engage_counter, brake1, disengage_counter, brake2, cycles, engage_accuracy, disengage_accuracy);
+  LCDDisplay(control_array[1],control_array[2], engage_counter, brake1, disengage_counter, brake2, cycles, engage_accuracy, disengage_accuracy, e_step, d_step;);
 
   /*
   Serial.print("Engage Counter: "); Serial.print(engage_counter); Serial.print("\t");

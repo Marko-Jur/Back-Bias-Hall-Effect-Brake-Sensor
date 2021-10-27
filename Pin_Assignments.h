@@ -3,8 +3,9 @@
 
 //Globals:
 const float EMA_ALPHA = 0.9;
-const int ENGAGE_TIME = 5000;
-const int DISENGAGE_TIME = 5000;
+const int ENGAGE_TIME = 1000;
+const int DISENGAGE_TIME = 1000;
+const int STEP_TIME = 100;
 const int ENGAGED = 70;
 const int DISENGAGED = 0;
 const float VOLTAGE_MAP = (5.00/1023.00);
